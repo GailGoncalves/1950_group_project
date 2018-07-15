@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Amaranth');
+
+$titles-font: 'Amaranth', sans-serif;
+$externalLinksHover: #abd2fa;
+$externalLinksFont: white;
+
+@mixin transitions ($transition) {
+	-webkit-transition: $transition;
+    transition:         $transition;  
+}
+
+h1, h2, h3{
+    font-family: $titles-font;
+}
+
+h1{
+    font-size: 2em;
+}
+
+#navbarSupportedContent ul{
+    list-style: none;
+}
+
+#banner{
+    height: 20em;
+    width: 100%;
+    background-image:  url("../img/home-banner3.jpg");
+    background-attachment: fixed;
+    background-size: contain;
+    position: relative;
+    #rgba{
+        background-color: rgba(0, 0, 0, .5);
+        color: white;
+        height: 100%;
+    }
+    #course-name{
+        font-family: $titles-font;
+        font-size: 2em;
+    }
+    #some-links{
+        li{
+            display: inline-block;
+            margin-left: .5em;
+        }
+        a{
+            color: $externalLinksHover;
+            padding: .5em;
+            font-weight: 450;
+            border-bottom: .1em solid $externalLinksHover;
+            @include transitions(.4s);
+        }
+        a:link, a:visited{
+            color: $externalLinksFont;
+        }
+        a:hover{
+            font-weight: 450;
+            text-decoration: none;
+            color: black;
+            background-color: $externalLinksHover;
+        }
+    }
+}
+
+#nav-div{
+    border-bottom: .1em solid lightgray;
+    -webkit-box-shadow: .3em .3em .8em -1em #333;
+            box-shadow: .3em .3em .8em -1em #333;
+}
+
+#dropdown1{
+    position: relative;    
+    #menu-dropdown1{
+        position: absolute;
+        top: 2em;
+    }
+}
+
+#more-dropdown2{
+    position: relative;    
+    #menu-dropdown2{
+        position: absolute;
+        top: 2em;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    #some-links{
+        ul{
+            display:-webkit-box;
+            display:-ms-flexbox;
+            display:flex;
+        }
+
+        li{
+            margin-bottom: 1em;
+            margin-right: 0;
+        }a{
+            padding: .1em;
+        }
+    }
+    #banner{
+        height: 17em;
+        h1{
+            font-size: 2em;
+        }
+    }
+}
+@media screen and (max-width: 1015px){
+    #banner{
+        height: 14em;
+        h1{
+            font-size: 1.5em;
+        }
+        p{
+            font-size: .8em;
+        }
+    }
+}
+@media screen and (max-width: 991px){
+    #banner{
+        #some-links{
+            a{
+                background-color: $externalLinksHover;
+                padding: .2em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 840px){
+    #banner{
+        background-image:  url("../img/home-banner-mini.jpg");
+        background-attachment: fixed;
+        background-size: contain;
+
+        ul{
+            display:block;
+            max-width: 20px;
+
+            li{
+                display: inline-block;
+            }
+        }
+
+        h1{
+            font-size: 1.5em;
+        }
+        p{
+            font-size: .5em;
+        }#some-links{
+            a{
+                background-color: $externalLinksHover;
+                padding: .2em;
+            }
+
+            a:hover{
+                font-weight: 550;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 575px){
+    #banner{
+        background-size: unset;
+        background-position-x: 90%;
+        #course-name{
+            position: absolute;
+            left: 3.5em;
+            h1{
+                font-size: 1.1em;
+            }
+            p{
+                font-size: .5em;
+            }
+        }
+        #some-links{
+            position: absolute;
+            top: 10px;
+            right: 1em;
+            ul{
+                max-width: 250px;
+                li{
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

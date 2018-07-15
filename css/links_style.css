@@ -1,0 +1,417 @@
+/*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+@import url("header.css");
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #222;
+  font-family: Verdana, sans-serif, Helvetica;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+html *, html *:before, html *:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+
+#body_wrapper {
+  background-color: #f2f2f2;
+  padding: 0px 15px;
+  max-width: 1024px;
+  margin: auto;
+}
+
+#container {
+  display: grid;
+  text-align: center;
+  grid-template-columns: 325px 325px 325px;
+  grid-template-rows: 260px 260px;
+  /* Grid Gap - sets spacing between grid elements */
+  /* Grid Gap is shorthand for grid-column-gap and grid-row-gap 	*/
+  /* grid-gap: [row-gap] [column-gap]	*/
+  grid-gap: 2px;
+}
+
+#container h2 {
+  color: #5D576B;
+  font-size: 19px;
+  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#background_image_fixed {
+  background-attachment: fixed;
+  background-image: url(../img/leafer.png);
+  border: 1px solid black;
+  width: 150px;
+  height: 150px;
+}
+
+main ul, main ol {
+  margin-top: 10px;
+}
+
+main section {
+  margin: 0;
+}
+
+main section h2 {
+  background-color: #8AC4FF;
+  color: #5D576B;
+  border-radius: 8px;
+  -webkit-box-shadow: 3px 3px 10px dimgray;
+  box-shadow: 3px 3px 10px dimgray;
+  border: 1px solid gray;
+  font-size: 19px;
+  margin: 0px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+main section h3 {
+  background-color: #476C9B;
+  color: #FFF;
+  border-radius: 8px;
+  -webkit-box-shadow: 3px 3px 10px dimgray;
+  box-shadow: 3px 3px 10px dimgray;
+  border: 1px solid gray;
+  font-size: 19px;
+  margin: 0;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+main section h4, main section h5 {
+  margin: 10px;
+  font-size: 1.1em;
+}
+
+main section table, main section form, main section dl, main section p {
+  margin: 10px;
+}
+
+.lecture_content fieldset {
+  margin: 10px;
+}
+
+.top_of_page {
+  text-align: center;
+  height: 40px;
+  padding: 7px 10px;
+  color: #61a4b0;
+}
+
+.go_to_top {
+  text-align: center;
+  height: 40px;
+  padding: 7px 10px;
+}
+
+footer {
+  text-align: center;
+  height: 60px;
+  background-color: #555;
+  padding: 7px 10px;
+}
+
+footer p {
+  padding: 0;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide visually and from screen readers
+ */
+.hidden {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+  /* 1 */
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+/*
+Print Attributes
+*/
+@media print {
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+  section {
+    page-break-inside: avoid;
+  }
+  nav {
+    display: none;
+  }
+  header {
+    display: none;
+  }
+  footer {
+    display: none;
+  }
+  p {
+    display: none;
+  }
+  section [id="videos"] {
+    display: none;
+  }
+  section [id="banner"] p {
+    display: none;
+  }
+  body [id="some-links"] {
+    display: none;
+  }
+  body [id="videos"] {
+    display: none;
+  }
+  a[href^="http"]::after {
+    content: "URL:(" attr(href) ")";
+    float: left !important;
+    padding-top: 10px !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  #container {
+    grid-template-columns: 325px 325px;
+    grid-template-rows: 260px 260px 260px;
+  }
+}
+
+@media (max-width: 750px) {
+  #search_engine form input {
+    display: none;
+  }
+  #search_engine #search_bar img {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  #container {
+    grid-template-columns: 325px;
+    grid-template-rows: 260px 260px 260px 260px 260px 260px;
+  }
+}
+
+@media (max-width: 575px) {
+  #nav_wrap {
+    height: 60px;
+  }
+}
+
+.links table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+.links table td, .links table th {
+  border: 1px solid #476C9B;
+  padding: 8px;
+}
+
+.links table tr:nth-child(even) {
+  background-color: #DDD;
+}
+
+.links table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #476C9B;
+  color: #FFF;
+}
+
+.bottom_space {
+  margin-bottom: 20px;
+}
+
+.top_space {
+  margin-top: 20px;
+}
+
+.padding_top {
+  padding-top: 10px;
+}
+
+main p {
+  margin: 0;
+}
+
+.heading_special {
+  background-color: #476C9B;
+  color: #FFF;
+  padding: 10px;
+  margin: 0;
+}
+
+.card-text {
+  color: black;
+  background-color: #DDD;
+  margin: 0;
+  padding: 30px;
+}
+
+.card_body_padding {
+  padding: 0;
+}
+
+.card-footer {
+  background-color: #DDD;
+}
+
+.btn-primary {
+  background-color: #DDD;
+}
+
+.video-field {
+  margin-left: 20px;
+}
